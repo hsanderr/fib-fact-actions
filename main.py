@@ -12,7 +12,7 @@ def fib(x):
     return fib(x - 1) + fib(x - 2) if x > 1 else 1 if x == 1 else 0
 
 # Read input file
-with open('test_wrong.data', 'r') as inputFile:
+with open('test_right.data', 'r') as inputFile:
     lines = inputFile.readlines()
 
 firstNumber = []
@@ -28,4 +28,4 @@ for line in lines:
 def testAnswers():
     for i in range(len(firstNumber)):
         assert fib(firstNumber[i]) == thirdNumber[i] \
-            and fact(firstNumber[i]) == secondNumber[i]
+            and fact(firstNumber[i]) == secondNumber[i], "Error on line {} (starting on 1 and excluding header and empty lines)".format(i + 1)
